@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="beaver (generated)" id="1493691423037-1">
+        <dropForeignKeyConstraint baseTableName="course" constraintName="fk_course_tutor"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-2">
+        <dropForeignKeyConstraint baseTableName="course_enrollment" constraintName="fk_enrollment_course"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-3">
+        <dropForeignKeyConstraint baseTableName="course_enrollment" constraintName="fk_enrollment_stud"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-4">
+        <dropForeignKeyConstraint baseTableName="student" constraintName="fk_student_addr"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-5">
+        <dropForeignKeyConstraint baseTableName="tutor" constraintName="fk_tutor_addr"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-6">
+        <dropUniqueConstraint constraintName="company_oid" tableName="company"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-7">
+        <dropUniqueConstraint constraintName="logo_id" tableName="company"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-8">
+        <dropUniqueConstraint constraintName="name" tableName="company"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-9">
+        <dropTable tableName="address"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-10">
+        <dropTable tableName="atl_bank"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-11">
+        <dropTable tableName="company"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-12">
+        <dropTable tableName="course"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-13">
+        <dropTable tableName="course_enrollment"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-14">
+        <dropTable tableName="student"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-15">
+        <dropTable tableName="tutor"/>
+    </changeSet>
+    <changeSet author="beaver (generated)" id="1493691423037-16">
+        <dropTable tableName="user_pic"/>
+    </changeSet>
+</databaseChangeLog>

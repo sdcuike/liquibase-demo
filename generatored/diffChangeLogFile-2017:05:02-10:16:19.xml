@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
-    <changeSet author="beaver (generated)" id="1493559216862-1">
+    <changeSet author="beaver (generated)" id="1493691380885-1">
         <createTable tableName="address">
             <column autoIncrement="true" name="addr_id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -20,7 +20,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-2">
+    <changeSet author="beaver (generated)" id="1493691380885-2">
         <createTable tableName="atl_bank">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -34,7 +34,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-3">
+    <changeSet author="beaver (generated)" id="1493691380885-3">
         <createTable tableName="company">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -58,7 +58,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-4">
+    <changeSet author="beaver (generated)" id="1493691380885-4">
         <createTable tableName="course">
             <column autoIncrement="true" name="course_id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -74,7 +74,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-5">
+    <changeSet author="beaver (generated)" id="1493691380885-5">
         <createTable tableName="course_enrollment">
             <column name="course_id" type="BIGINT">
                 <constraints nullable="false"/>
@@ -84,7 +84,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-6">
+    <changeSet author="beaver (generated)" id="1493691380885-6">
         <createTable tableName="student">
             <column autoIncrement="true" name="stud_id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -102,7 +102,7 @@
             <column name="addr_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-7">
+    <changeSet author="beaver (generated)" id="1493691380885-7">
         <createTable tableName="tutor">
             <column autoIncrement="true" name="tutor_id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -120,7 +120,7 @@
             <column name="addr_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-8">
+    <changeSet author="beaver (generated)" id="1493691380885-8">
         <createTable tableName="user_pic">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints primaryKey="true"/>
@@ -130,51 +130,51 @@
             <column name="bio" type="LONGTEXT"/>
         </createTable>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-9">
+    <changeSet author="beaver (generated)" id="1493691380885-9">
         <addPrimaryKey columnNames="course_id, stud_id" constraintName="PRIMARY" tableName="course_enrollment"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-10">
+    <changeSet author="beaver (generated)" id="1493691380885-10">
         <addUniqueConstraint columnNames="company_oid" constraintName="company_oid" tableName="company"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-11">
+    <changeSet author="beaver (generated)" id="1493691380885-11">
         <addUniqueConstraint columnNames="logo_id" constraintName="logo_id" tableName="company"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-12">
+    <changeSet author="beaver (generated)" id="1493691380885-12">
         <addUniqueConstraint columnNames="name" constraintName="name" tableName="company"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-13">
+    <changeSet author="beaver (generated)" id="1493691380885-13">
         <createIndex indexName="fk_course_tutor" tableName="course">
             <column name="tutor_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-14">
+    <changeSet author="beaver (generated)" id="1493691380885-14">
         <createIndex indexName="fk_enrollment_stud" tableName="course_enrollment">
             <column name="stud_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-15">
+    <changeSet author="beaver (generated)" id="1493691380885-15">
         <createIndex indexName="fk_student_addr" tableName="student">
             <column name="addr_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-16">
+    <changeSet author="beaver (generated)" id="1493691380885-16">
         <createIndex indexName="fk_tutor_addr" tableName="tutor">
             <column name="addr_id"/>
         </createIndex>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-17">
+    <changeSet author="beaver (generated)" id="1493691380885-17">
         <addForeignKeyConstraint baseColumnNames="tutor_id" baseTableName="course" constraintName="fk_course_tutor" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="tutor_id" referencedTableName="tutor"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-18">
+    <changeSet author="beaver (generated)" id="1493691380885-18">
         <addForeignKeyConstraint baseColumnNames="course_id" baseTableName="course_enrollment" constraintName="fk_enrollment_course" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="course_id" referencedTableName="course"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-19">
+    <changeSet author="beaver (generated)" id="1493691380885-19">
         <addForeignKeyConstraint baseColumnNames="stud_id" baseTableName="course_enrollment" constraintName="fk_enrollment_stud" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="stud_id" referencedTableName="student"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-20">
+    <changeSet author="beaver (generated)" id="1493691380885-20">
         <addForeignKeyConstraint baseColumnNames="addr_id" baseTableName="student" constraintName="fk_student_addr" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="addr_id" referencedTableName="address"/>
     </changeSet>
-    <changeSet author="beaver (generated)" id="1493559216862-21">
+    <changeSet author="beaver (generated)" id="1493691380885-21">
         <addForeignKeyConstraint baseColumnNames="addr_id" baseTableName="tutor" constraintName="fk_tutor_addr" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="addr_id" referencedTableName="address"/>
     </changeSet>
 </databaseChangeLog>
